@@ -1,0 +1,24 @@
+{
+  "name": "loldle-bot",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000l\u0000o\u0000l\u0000d\u0000l\u0000e\u0000-\u0000b\u0000o\u0000t\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaellu15/loldle-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaellu15/loldle-bot/issues"
+  },
+  "homepage": "https://github.com/michaellu15/loldle-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.21.0",
+    "dotenv": "^17.2.0"
+  }
+}
