@@ -4,7 +4,7 @@ const { Client, GatewayIntentBits, Collection } = require('discord.js')
 const fs = require('fs')
 const path = require('path')
 
-const prefix = '?';
+const PREFIX = '?';
 
 const client = new Client({
     intents: [
@@ -34,12 +34,12 @@ client.on("ready", () => {
 //check message sent in server
 client.on("messageCreate", async (msg) => {
     //msg doesn't start with prefix or is sent with bot
-    if(!msg.content.startsWith('?')||message.author.bot){
+    if(!msg.content.startsWith(PREFIX)||message.author.bot){
         return;
     }
 
     //break the message into the commandName and the args
-    const [commandName, ...args] = message.content.slice().trim().split(/ +/)
+    const [commandName, ...args] = message.content.slice(PREFIX.length).trim().split(/ +/)
 
     //command is the command function inside of the map
     const command = client.commands.get(commandName.toLowerCase());
