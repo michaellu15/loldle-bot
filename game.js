@@ -5,13 +5,16 @@ const games = new Map();
 function startGame(channelId, champion){
     games.set(channelId,{
         target: champion,
-        guesses: []
+        guesses: [],
+        guessers: []
     });
 }
 
-function addGuess(channelId,guess){
-    if(!games.has(channelId)) return;
-    games.get(channelId).guesses.push(guess);
+function addGuess(channelId, guess, user){
+    if (!games.has(channelId)) return;
+    const game = games.get(channelId);
+    game.guesses.push(guess);
+    game.guessers.push(user); 
 }
 function getGame(channelId){
     return games.get(channelId);
