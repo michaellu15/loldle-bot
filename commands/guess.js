@@ -4,7 +4,7 @@ const { getFeedback } = require('../feedback.js')
 
 module.exports = {
     name: 'guess',
-    execute(message, args, input) {
+    async execute(message, args, input) {
         const channelId = message.channel.id
         const currentGame = getGame(channelId)
         if (!currentGame) {

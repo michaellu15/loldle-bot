@@ -11,6 +11,6 @@ module.exports = {
         const feedback = getFeedback(game.target,game.target);
         endGame(message.channel.id);
 
-        message.channel.send(`The game has been ended by ${message.author}.\n\n` + `**Correct Answer: ${game.target.name}**\n${feedback.slice(1).join(' ')}`)
+        message.channel.send(`The game has been ended by ${message.author}.\n\n` + `**Correct Answer: ${game.target.name}**\n${feedback.slice(1).join('\n')}`)
     }
 }
