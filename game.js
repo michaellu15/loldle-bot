@@ -9,9 +9,9 @@ function startGame(channelId, champion){
     });
 }
 
-function addGuess(channelId,guess){
+function addGuess(channelId,champion,user){
     if(!games.has(channelId)) return;
-    games.get(channelId).guesses.push(guess);
+    games.get(channelId).guesses.push({name: champion.name, user: username});
 }
 function getGame(channelId){
     return games.get(channelId);

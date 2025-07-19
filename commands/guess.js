@@ -35,12 +35,16 @@ module.exports = {
             );
         }
         message.delete();
-        addGuess(channelId, guessChampion);
+        let username = message.member.displayName
+        if(!username){
+            username = message.author.username
+        }
+        addGuess(channelId, guessChampion,username);
         deleteFeedbackMessage(channelId);
 
         const history = currentGame.guesses.map((guessChampion, index) => {
             const feedback = getFeedback(guessChampion, currentGame.target);
-            return `**Guess ${index + 1}: ${guessChampion.name}**\n${feedback.slice(1).join(' ')}`;
+            return `**Guess ${index + 1} by ${guessChampion.user}: ${guessChampion.name}**\n${feedback.slice(1).join(' ')}`;
         })
 
         message.channel.send(history.join('\n\n')).then(sent => {
