@@ -3,8 +3,6 @@ const token = process.env.DISCORD_TOKEN;
 const { Client, GatewayIntentBits, Collection } = require('discord.js')
 const fs = require('fs')
 const path = require('path')
-const express = require('express')
-const app = express();
 
 const PREFIX = '?';
 
@@ -67,6 +65,3 @@ client.on("messageCreate", async (message) => {
 })
 
 client.login(token)
-
-app.get('/',(req,res)=> res.send('Bot is live'))
-app.listen(process.env.PORT || 3000, ()=> console.log('Web server is running.'))

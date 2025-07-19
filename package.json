@@ -20,7 +20,6 @@
   "homepage": "https://github.com/michaellu15/loldle-bot#readme",
   "dependencies": {
     "discord.js": "^14.21.0",
-    "dotenv": "^17.2.0",
-    "express": "^5.1.0"
+    "dotenv": "^17.2.0"
   }
 }

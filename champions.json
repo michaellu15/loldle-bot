@@ -1155,7 +1155,7 @@
             "jax"
         ],
         "name": "jax",
-        "resource": "mana",
+        "resource": "Mana",
         "gender": "Male",
         "rangeType": [
             "Melee"
@@ -1800,7 +1800,7 @@
             "Shadow Isles"
         ],
         "positions": [
-            "Support"
+            "Support","Jungle"
         ],
         "species": [
             "Spirit"
@@ -3044,7 +3044,7 @@
     },
     {
         "id": [
-            "teeemo"
+            "teemo"
         ],
         "name": "Teemo",
         "resource": "Mana",

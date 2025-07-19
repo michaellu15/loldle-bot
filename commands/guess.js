@@ -39,7 +39,7 @@ module.exports = {
         if(!username){
             username = message.author.username
         }
-        addGuess(channelId, guessChampion,username);
+        addGuess(channelId, guessChampion, username);
         await deleteFeedbackMessage(channelId);
 
         const history = currentGame.guesses.map((guessChampion, index) => {
