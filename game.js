@@ -34,19 +34,18 @@ function getFeedbackMessage(channelId) {
 
 async function deleteFeedbackMessage(channelId) {
   const msg = feedbackMessages.get(channelId);
-  feedbackMessages.delete(channelId)
-  if (!msg) {
-    return;
-  }
-  try{
-    const message = await msg.channel.messages.fetch(msg.id)
-    if(message && message.deletable){
-        await message.delete()
+  feedbackMessages.delete(channelId);
+
+  if (!msg) return;
+
+  try {
+    const message = await msg.channel.messages.fetch(msg.id);
+    if (message && message.deletable) {
+      await message.delete();
     }
-  }
-  catch(err){
-    if(err.code !== 10008){
-        console.error(`Failed to delete feedback message `,err)
+  } catch (err) {
+    if (err.code !== 10008) {
+      console.error(`Failed to delete feedback message:`, err);
     }
   }
 }
