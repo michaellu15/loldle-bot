@@ -30,9 +30,10 @@ module.exports = {
 
         if (alreadyGuessed) {
             const feedback = getFeedback(guessChampion, currentGame.target);
-            return message.reply(
-                `You've already guessed **${guessChampion.name}**! Here's the feedback again:\n\n${feedback}`
+            message.send(
+                `${message.author} **${guessChampion.name}** has already been guessed! Here's the feedback again:\n\n${feedback.slice(1).join('\n')}`
             );
+            return message.delete();
         }
         message.delete();
         addGuess(channelId, guessChampion,{
