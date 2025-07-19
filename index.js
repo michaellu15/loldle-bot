@@ -23,18 +23,18 @@ for (const file of commandFiles) {
     const filePath = path.join(commandsPath, file)
     const command = require(filePath)
 
-    if(command.name && command.execute){
-        client.commands.set(command.name,command);
+    if (command.name && command.execute) {
+        client.commands.set(command.name, command);
     }
-}  
+}
 //bot turned on
 client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}`)
 })
 //check message sent in server
-client.on("messageCreate", async (msg) => {
+client.on("messageCreate", async (message) => {
     //msg doesn't start with prefix or is sent with bot
-    if(!msg.content.startsWith(PREFIX)||message.author.bot){
+    if (!message.content.startsWith(PREFIX) || message.author.bot) {
         return;
     }
 
@@ -43,16 +43,23 @@ client.on("messageCreate", async (msg) => {
 
     //command is the command function inside of the map
     const command = client.commands.get(commandName.toLowerCase());
-    if(!command){
+    if (!command) {
+        await message.author.send({
+            content: 'Invalid command, use `?help` to see available commands.'
+        })
+        await message.delete()
         return;
     }
     //string the args together following the command
     const input = args.join(' ');
-    try{
-        command.execute(message,args,input);
-    } catch (err){
+    try {
+        command.execute(message, args, input);
+    } catch (err) {
         console.log(err);
-        message.reply('There was an error executing that command.')
+        message.reply({
+            content: 'There was an error executing that command.',
+     })
+     message.delete()
     }
 
 })

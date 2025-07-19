@@ -2306,7 +2306,7 @@
         ],
         "name": "Quinn",
         "resource": "Mana",
-        "gender": "Male",
+        "gender": "Female",
         "rangeType": [
             "Ranged"
         ],
@@ -3307,8 +3307,7 @@
             "Shadow Isles"
         ],
         "positions": [
-            "Middle",
-            "Bottom"
+            "Middle"
         ],
         "species": [
             "Yordle"
