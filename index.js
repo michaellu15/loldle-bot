@@ -39,6 +39,9 @@ client.on("messageCreate", async (message) => {
     if (!message.content.startsWith(PREFIX) || message.author.bot) {
         return;
     }
+    if(message.content.startsWith(PREFIX+PREFIX)||message.content.startsWith(PREFIX+' ')){
+        return;
+    }
 
     //break the message into the commandName and the args
     const [commandName, ...args] = message.content.slice(PREFIX.length).trim().split(/ +/)
