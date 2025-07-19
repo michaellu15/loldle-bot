@@ -1154,7 +1154,7 @@
         "id": [
             "jax"
         ],
-        "name": "jax",
+        "name": "Jax",
         "resource": "Mana",
         "gender": "Male",
         "rangeType": [
@@ -1478,7 +1478,7 @@
             "kindred"
         ],
         "name": "Kindred",
-        "resource": "mana",
+        "resource": "Mana",
         "gender": "Other",
         "rangeType": [
             "Ranged"
@@ -1800,7 +1800,8 @@
             "Shadow Isles"
         ],
         "positions": [
-            "Support","Jungle"
+            "Support",
+            "Jungle"
         ],
         "species": [
             "Spirit"
@@ -2864,7 +2865,7 @@
         ],
         "name": "Soraka",
         "resource": "Mana",
-        "gender": "Ranged",
+        "gender": "Female",
         "rangeType": [
             "Ranged"
         ],
@@ -3483,16 +3484,21 @@
         "name": "Warwick",
         "resource": "Mana",
         "gender": "Male",
-        "rangeType": ["Melee"],
+        "rangeType": [
+            "Melee"
+        ],
         "releaseDate": 2009,
         "regions": [
             "Zaun"
         ],
         "positions": [
-            "Jungle","Top"
+            "Jungle",
+            "Top"
         ],
         "species": [
-            "Chemically Altered","Cyborg","Human"
+            "Chemically Altered",
+            "Cyborg",
+            "Human"
         ]
     },
     {
@@ -3502,7 +3508,9 @@
         "name": "Xayah",
         "resource": "Mana",
         "gender": "Female",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2017,
         "regions": [
             "Ionia"
@@ -3521,13 +3529,16 @@
         "name": "Xerath",
         "resource": "Mana",
         "gender": "Male",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2011,
         "regions": [
             "Shurima"
         ],
         "positions": [
-            "Middle","Support"
+            "Middle",
+            "Support"
         ],
         "species": [
             "Baccai"
@@ -3535,15 +3546,20 @@
     },
     {
         "id": [
-            "xin zhao","xinzhao"
+            "xin zhao",
+            "xinzhao"
         ],
         "name": "Xin Zhao",
         "resource": "Mana",
         "gender": "Male",
-        "rangeType": ["Melee"],
+        "rangeType": [
+            "Melee"
+        ],
         "releaseDate": 2010,
         "regions": [
-            "Demacia","Ionia","Noxus"
+            "Demacia",
+            "Ionia",
+            "Noxus"
         ],
         "positions": [
             "Jungle"
@@ -3559,13 +3575,16 @@
         "name": "Yasuo",
         "resource": "Flow",
         "gender": "Male",
-        "rangeType": ["Melee"],
+        "rangeType": [
+            "Melee"
+        ],
         "releaseDate": 2013,
         "regions": [
             "Ionia"
         ],
         "positions": [
-            "Middle","Bottom"
+            "Middle",
+            "Bottom"
         ],
         "species": [
             "Human"
@@ -3578,16 +3597,20 @@
         "name": "Yone",
         "resource": "Manaless",
         "gender": "Male",
-        "rangeType": ["Melee"],
+        "rangeType": [
+            "Melee"
+        ],
         "releaseDate": 2020,
         "regions": [
             "Ionia"
         ],
         "positions": [
-            "Middle","Top"
+            "Middle",
+            "Top"
         ],
         "species": [
-            "Human","Magically Altered"
+            "Human",
+            "Magically Altered"
         ]
     },
     {
@@ -3597,16 +3620,20 @@
         "name": "Yorick",
         "resource": "Mana",
         "gender": "Male",
-        "rangeType": ["Melee"],
+        "rangeType": [
+            "Melee"
+        ],
         "releaseDate": 2011,
         "regions": [
             "Shadow Isles"
         ],
         "positions": [
-            "Jungle","Top"
+            "Jungle",
+            "Top"
         ],
         "species": [
-            "Human","Magically Altered"
+            "Human",
+            "Magically Altered"
         ]
     },
     {
@@ -3616,7 +3643,9 @@
         "name": "Yunara",
         "resource": "Mana",
         "gender": "Female",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2025,
         "regions": [
             "Ionia"
@@ -3625,7 +3654,8 @@
             "Bottom"
         ],
         "species": [
-            "human","Magicborn"
+            "human",
+            "Magicborn"
         ]
     },
     {
@@ -3635,7 +3665,9 @@
         "name": "Yuumi",
         "resource": "Mana",
         "gender": "Female",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2019,
         "regions": [
             "Bandle City"
@@ -3644,7 +3676,8 @@
             "Support"
         ],
         "species": [
-            "Cat","Magically Altered"
+            "Cat",
+            "Magically Altered"
         ]
     },
     {
@@ -3654,7 +3687,9 @@
         "name": "Zac",
         "resource": "Health Costs",
         "gender": "Male",
-        "rangeType": ["Melee"],
+        "rangeType": [
+            "Melee"
+        ],
         "releaseDate": 2013,
         "regions": [
             "Zaun"
@@ -3673,16 +3708,20 @@
         "name": "Zed",
         "resource": "Energy",
         "gender": "Male",
-        "rangeType": ["Melee"],
+        "rangeType": [
+            "Melee"
+        ],
         "releaseDate": 2012,
         "regions": [
             "Ionia"
         ],
         "positions": [
-            "Jungle","Middle"
+            "Jungle",
+            "Middle"
         ],
         "species": [
-            "Human","Magically Altered"
+            "Human",
+            "Magically Altered"
         ]
     },
     {
@@ -3692,7 +3731,9 @@
         "name": "Zeri",
         "resource": "Mana",
         "gender": "Female",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2022,
         "regions": [
             "Zaun"
@@ -3701,7 +3742,8 @@
             "Bottom"
         ],
         "species": [
-            "Human","Magicborn"
+            "Human",
+            "Magicborn"
         ]
     },
     {
@@ -3711,13 +3753,16 @@
         "name": "Ziggs",
         "resource": "Mana",
         "gender": "Male",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2012,
         "regions": [
             "Zaun"
         ],
         "positions": [
-            "Bottom","Middle"
+            "Bottom",
+            "Middle"
         ],
         "species": [
             "Yordle"
@@ -3730,16 +3775,21 @@
         "name": "Zilean",
         "resource": "Mana",
         "gender": "Male",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2009,
         "regions": [
-            "Icathia","Runeterra","Shurima"
+            "Icathia",
+            "Runeterra",
+            "Shurima"
         ],
         "positions": [
             "Support"
         ],
         "species": [
-            "Human","Magicborn"
+            "Human",
+            "Magicborn"
         ]
     },
     {
@@ -3749,7 +3799,9 @@
         "name": "Zoe",
         "resource": "Mana",
         "gender": "Female",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2017,
         "regions": [
             "Targon"
@@ -3758,7 +3810,8 @@
             "Middle"
         ],
         "species": [
-            "Aspect","Human"
+            "Aspect",
+            "Human"
         ]
     },
     {
@@ -3768,7 +3821,9 @@
         "name": "Zyra",
         "resource": "Mana",
         "gender": "Female",
-        "rangeType": ["Ranged"],
+        "rangeType": [
+            "Ranged"
+        ],
         "releaseDate": 2012,
         "regions": [
             "Ixtal"
@@ -3777,7 +3832,8 @@
             "Support"
         ],
         "species": [
-            "Human","Plant"
+            "Human",
+            "Plant"
         ]
     }
 ]
