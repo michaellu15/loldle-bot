@@ -12,6 +12,7 @@ function startGame(channelId, champion){
 function addGuess(channelId,champion,user){
     if(!games.has(channelId)) return;
     games.get(channelId).guesses.push({...champion, user: user});
+    console.log(games.get(channelId).guesses)
 }
 function getGame(channelId){
     return games.get(channelId);
