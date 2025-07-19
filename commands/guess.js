@@ -4,7 +4,7 @@ const { getFeedback } = require('../feedback.js')
 
 module.exports = {
     name: 'guess',
-    execute(message, args, input) {
+    async execute(message, args, input) {
         const channelId = message.channel.id
         const currentGame = getGame(channelId)
         if (!currentGame) {
@@ -40,7 +40,7 @@ module.exports = {
             username = message.author.username
         }
         addGuess(channelId, guessChampion,username);
-        deleteFeedbackMessage(channelId);
+        await deleteFeedbackMessage(channelId);
 
         const history = currentGame.guesses.map((guessChampion, index) => {
             const feedback = getFeedback(guessChampion, currentGame.target);

@@ -55,7 +55,7 @@ client.on("messageCreate", async (message) => {
     //string the args together following the command
     const input = args.join(' ');
     try {
-        command.execute(message, args, input);
+        await command.execute(message, args, input);
     } catch (err) {
         console.log(err);
         message.reply({

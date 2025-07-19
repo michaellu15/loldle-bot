@@ -29,12 +29,23 @@ function getFeedbackMessage(channelId) {
   return feedbackMessages.get(channelId);
 }
 
-function deleteFeedbackMessage(channelId) {
+async function deleteFeedbackMessage(channelId) {
   const msg = feedbackMessages.get(channelId);
-  if (msg && msg.deletable) {
-    msg.delete().catch(console.error);
+  feedbackMessages.delete(channelId)
+  if (!msg) {
+    return;
   }
-  feedbackMessages.delete(channelId);
+  try{
+    const message = await msg.channel.messages.fetch(msg.id)
+    if(message && message.deletable){
+        await message.delete()
+    }
+  }
+  catch(err){
+    if(err.code !== 10008){
+        console.error(`Failed to delete feedback message `,err)
+    }
+  }
 }
 
 module.exports = {startGame, addGuess, getGame, endGame, setFeedbackMessage, getFeedbackMessage, deleteFeedbackMessage}
