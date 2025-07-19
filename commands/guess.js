@@ -44,7 +44,7 @@ module.exports = {
 
         const history = currentGame.guesses.map((guessChampion, index) => {
             const feedback = getFeedback(guessChampion, currentGame.target);
-            return `**Guess ${index + 1} by ${guessChampion.user}: ${guessChampion.name}**\n${feedback.slice(1).join(' ')}`;
+            return `**Guess ${index + 1} by ${guessChampion.user}: ${guessChampion.name}**\n${feedback.slice(1).join('\n')}`;
         })
 
         message.channel.send(history.join('\n\n')).then(sent => {
