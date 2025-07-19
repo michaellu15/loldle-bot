@@ -35,10 +35,14 @@ client.on("ready", () => {
 })
 //check message sent in server
 client.on("messageCreate", async (message) => {
+    if(message.content.length===1){
+        return;
+    }
     //msg doesn't start with prefix or is sent with bot
     if (!message.content.startsWith(PREFIX) || message.author.bot) {
         return;
     }
+    //check that it is an intended command and not just a single ?
     if(message.content.startsWith(PREFIX+PREFIX)||message.content.startsWith(PREFIX+' ')){
         return;
     }
@@ -48,6 +52,7 @@ client.on("messageCreate", async (message) => {
 
     //command is the command function inside of the map
     const command = client.commands.get(commandName.toLowerCase());
+    //sent an invalid command
     if (!command) {
         await message.author.send({
             content: 'Invalid command, use `?help` to see available commands.'
