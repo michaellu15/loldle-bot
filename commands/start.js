@@ -11,7 +11,7 @@ module.exports = {
         startGame(message.channel.id,chosenChampion)
 
         message.channel.send(
-            `A new Loldle game was started by ${message.author}! Use \`?guess [champion name]\` to make your guess.`
+            `A new Loldle game was started by ${message.author}! Use \`?guess [champion name]\` to make your guess. You have a maximum of 9 guesses. Good Luck!`
         )
         //delete start command message sent by user
         message.delete()
