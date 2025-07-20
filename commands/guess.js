@@ -65,7 +65,7 @@ module.exports = {
 
             await message.channel.send(history.join('\n\n'))
             const feedback = getFeedback(currentGame.target, currentGame.target)
-            await message.channel.send(`You have reached the maximum guesses of 9!\n\n` + `**Correct Answer: ${currentGame.target.name}**\n${feedback.slice(1).join('\n')}`)
+            await message.channel.send(`\n**You have reached the maximum guesses of 9!**\n` + `**Correct Answer: ${currentGame.target.name}**\n${feedback.slice(1).join('\n')}`)
             return
 
         }
