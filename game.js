@@ -16,6 +16,12 @@ function addGuess(channelId, guess, user){
     game.guesses.push(guess);
     game.guessers.push(user); 
 }
+function getGuesses(channelId){
+  if(games){
+    return games.get(channelId).guesses;
+  }
+  return null;
+}
 function getGame(channelId){
     return games.get(channelId);
 }
@@ -50,4 +56,4 @@ async function deleteFeedbackMessage(channelId) {
   }
 }
 
-module.exports = {startGame, addGuess, getGame, endGame, setFeedbackMessage, getFeedbackMessage, deleteFeedbackMessage}
+module.exports = {startGame, addGuess, getGame, endGame, getGuesses,setFeedbackMessage, getFeedbackMessage, deleteFeedbackMessage}

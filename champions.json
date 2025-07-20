@@ -1679,7 +1679,7 @@
         ],
         "name": "Lucian",
         "resource": "Mana",
-        "gender": "Female",
+        "gender": "Male",
         "rangeType": [
             "Ranged"
         ],
@@ -1830,6 +1830,30 @@
             "Spiritualist"
         ]
     },
+    {
+        "id": [
+            "mel"
+        ],
+        "name": "Mel",
+        "resource": "Mana",
+        "gender": "Female",
+        "rangeType": [
+            "Ranged"
+        ],
+        "releaseDate": 2025,
+        "regions": [
+            "Noxus","Piltover"
+        ],
+        "positions": [
+            "Middle",
+            "Support"
+        ],
+        "species": [
+            "Human",
+            "Magically Altered"
+        ]
+    },
+    
     {
         "id": [
             "milio"

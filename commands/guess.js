@@ -1,4 +1,4 @@
-const { getGame, addGuess, endGame, setFeedbackMessage, deleteFeedbackMessage } = require('../game.js')
+const { getGame, addGuess, endGame, getGuesses,setFeedbackMessage, deleteFeedbackMessage } = require('../game.js')
 const { getChampion } = require('../championlookup.js')
 const { getFeedback } = require('../feedback.js')
 
@@ -48,12 +48,20 @@ module.exports = {
             const feedback = getFeedback(guessChampion, currentGame.target);
             return `**Guess ${index + 1} by ${guesserName}: ${guessChampion.name}**\n${feedback.slice(1).join('\n')}`;
         })
+        const guesses = getGuesses(channelId);
+        if(guesses && guesses.length === 9){
+            endGame(channelId)
+            const feedback = getFeedback(currentGame.target,currentGame.target)
+            await message.channel.send(`You have reached the maximum guesses of 9!\n\n`+`**Correct Answer: ${currentGame.target.name}**\n${feedback.slice(1).join('\n')}`)
+            return
+
+        }
 
         message.channel.send(history.join('\n\n')).then(sent => {
             setFeedbackMessage(channelId, sent);
         });
         if (guessChampion.name.toLowerCase() === currentGame.target.name.toLowerCase()) {
-            endGame(channelId);
+            endGame(channelId)
             return message.channel.send(
                 `Congratulations ${message.author}! You guessed the champion **${guessChampion.name}** correctly!`
             );
