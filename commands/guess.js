@@ -49,7 +49,7 @@ module.exports = {
             return `**Guess ${index + 1} by ${guesserName}: ${guessChampion.name}**\n${feedback.slice(1).join('\n')}`;
         })
         const guesses = getGuesses(channelId);
-        if (guesses && guesses.length === 9) {
+        if (guesses && guesses.length === 9&&!(guessChampion.name.toLowerCase() === currentGame.target.name.toLowerCase())) {
             const finalTarget = currentGame.target
             const finalGuesses = [...currentGame.guesses]
             const finalGuessers = [...currentGame.guessers]
