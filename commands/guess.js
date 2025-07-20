@@ -1,4 +1,4 @@
-const { getGame, addGuess, endGame, getGuesses,setFeedbackMessage, deleteFeedbackMessage } = require('../game.js')
+const { getGame, addGuess, endGame, getGuesses, setFeedbackMessage, deleteFeedbackMessage } = require('../game.js')
 const { getChampion } = require('../championlookup.js')
 const { getFeedback } = require('../feedback.js')
 
@@ -36,11 +36,11 @@ module.exports = {
             return message.delete();
         }
         message.delete();
-        addGuess(channelId, guessChampion,{
+        addGuess(channelId, guessChampion, {
             username: message.author.username,
             nickname: message.member?.nickname
         });
-        deleteFeedbackMessage(channelId);
+        
 
         const history = currentGame.guesses.map((guessChampion, index) => {
             const guesser = currentGame.guessers?.[index]
@@ -49,13 +49,27 @@ module.exports = {
             return `**Guess ${index + 1} by ${guesserName}: ${guessChampion.name}**\n${feedback.slice(1).join('\n')}`;
         })
         const guesses = getGuesses(channelId);
-        if(guesses && guesses.length === 9){
+        if (guesses && guesses.length === 9) {
+            const finalTarget = currentGame.target
+            const finalGuesses = [...currentGame.guesses]
+            const finalGuessers = [...currentGame.guessers]
+
+            deleteFeedbackMessage(channelId);
             endGame(channelId)
-            const feedback = getFeedback(currentGame.target,currentGame.target)
-            await message.channel.send(`You have reached the maximum guesses of 9!\n\n`+`**Correct Answer: ${currentGame.target.name}**\n${feedback.slice(1).join('\n')}`)
+            const history = finalGuesses.map((guessChampion, index) => {
+                const guesser = finalGuessers?.[index];
+                const guesserName = guesser?.nickname || guesser?.username || 'Unknown';
+                const feedback = getFeedback(guessChampion, finalTarget);
+                return `**Guess ${index + 1} by ${guesserName}: ${guessChampion.name}**\n${feedback.slice(1).join('\n')}`;
+            });
+
+            await message.channel.send(history.join('\n\n'))
+            const feedback = getFeedback(currentGame.target, currentGame.target)
+            await message.channel.send(`You have reached the maximum guesses of 9!\n\n` + `**Correct Answer: ${currentGame.target.name}**\n${feedback.slice(1).join('\n')}`)
             return
 
         }
+        deleteFeedbackMessage(channelId);
 
         message.channel.send(history.join('\n\n')).then(sent => {
             setFeedbackMessage(channelId, sent);
