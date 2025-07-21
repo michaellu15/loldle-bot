@@ -330,7 +330,8 @@
         "id": [
             "bel'veth",
             "bel veth",
-            "belveth"
+            "belveth",
+            "bel’veth"
         ],
         "name": "Bel'Veth",
         "resource": "Manaless",
@@ -515,7 +516,8 @@
             "cho'gath",
             "cho",
             "chogath",
-            "cho gath"
+            "cho gath",
+            "cho’gath"
         ],
         "name": "Cho'Gath",
         "resource": "Mana",
@@ -1245,7 +1247,8 @@
         "id": [
             "kai'sa",
             "kaisa",
-            "kai sa"
+            "kai sa",
+            "kai’sa"
         ],
         "name": "Kai'Sa",
         "resource": "Mana",
@@ -1520,7 +1523,8 @@
         "id": [
             "kog'maw",
             "kogmaw",
-            "kog maw"
+            "kog maw",
+            "kog’maw"
         ],
         "name": "Kog'Maw",
         "resource": "Mana",
@@ -1543,7 +1547,8 @@
         "id": [
             "k'sante",
             "ksante",
-            "k sante"
+            "k sante",
+            "k’sante"
         ],
         "name": "K'Sante",
         "resource": "Mana",
@@ -2393,7 +2398,8 @@
         "id": [
             "rek'sai",
             "reksai",
-            "rek sai"
+            "rek sai",
+            "rek’sai"
         ],
         "name": "Rek'Sai",
         "resource": "Rage",
@@ -3342,7 +3348,8 @@
         "id": [
             "vel'koz",
             "vel koz",
-            "velkoz"
+            "velkoz",
+            "vel’koz"
         ],
         "name": "Vel'Koz",
         "resource": "Mana",
