@@ -53,7 +53,6 @@ module.exports = {
             const finalTarget = currentGame.target
             const finalGuesses = [...currentGame.guesses]
             const finalGuessers = [...currentGame.guessers]
-
             deleteFeedbackMessage(channelId);
             endGame(channelId)
             const history = finalGuesses.map((guessChampion, index) => {
@@ -69,7 +68,10 @@ module.exports = {
             return
 
         }
-        deleteFeedbackMessage(channelId);
+        if(guesses.length > 1){
+            deleteFeedbackMessage(channelId);
+        }
+        
 
         message.channel.send(history.join('\n\n')).then(sent => {
             setFeedbackMessage(channelId, sent);
