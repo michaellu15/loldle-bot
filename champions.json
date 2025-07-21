@@ -2737,12 +2737,12 @@
     },
     {
         "id": [
-            "shyvanna",
+            "shyvana",
             "shyv"
         ],
-        "name": "Shyvanna",
+        "name": "Shyvana",
         "resource": "Fury",
-        "gender": "Male",
+        "gender": "Female",
         "rangeType": [
             "Melee"
         ],
