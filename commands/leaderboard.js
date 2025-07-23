@@ -1,4 +1,4 @@
-const {getScore, getLeaderboard} = require('../updateleadeboard')
+const {getScore, getLeaderboard} = require('../updateleaderboard')
 module.exports = {
     name: 'leaderboard',
     async execute(message){
