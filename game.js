@@ -1,4 +1,4 @@
-const {addStats} = require('../updateleaderboard.js')
+const {addStats} = require('./updateleaderboard.js')
 
 //stores active games in channel id/champion object key value pairs
 const games = new Map();
