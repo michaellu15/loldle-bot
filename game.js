@@ -1,6 +1,7 @@
+const {addStats} = require('../updateleaderboard.js')
+
 //stores active games in channel id/champion object key value pairs
 const games = new Map();
-
 
 function startGame(channelId, champion){
     games.set(channelId,{
@@ -14,19 +15,22 @@ function addGuess(channelId, guess, user){
     if (!games.has(channelId)) return;
     const game = games.get(channelId);
     game.guesses.push(guess);
-    game.guessers.push(user); 
+    game.guessers.push(user);
 }
+
 function getGuesses(channelId){
-  if(games){
-    return games.get(channelId).guesses;
-  }
-  return null;
+  return games.get(channelId).guesses
 }
 function getGame(channelId){
     return games.get(channelId);
 }
-function endGame(channelId){
-    games.delete(channelId)
+function endGame(channelId,winner,guildId){
+  const game = games.get(channelId)
+  if(!game){
+    return;
+  }
+  addStats(guildId,games.get(channelId).guessers,winner)
+  games.delete(channelId)
 }
 const feedbackMessages = new Map();
 

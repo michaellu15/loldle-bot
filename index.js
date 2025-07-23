@@ -5,8 +5,11 @@ const fs = require('fs')
 const path = require('path')
 const express = require('express');
 const app = express();
+const connect = require('./database/connect')
 
 const PREFIX = '?';
+//connect to MongoDB
+connect();
 
 const client = new Client({
     intents: [

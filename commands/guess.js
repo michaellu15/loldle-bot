@@ -2,6 +2,7 @@ const { getGame, addGuess, endGame, getGuesses, setFeedbackMessage, deleteFeedba
 const { getChampion } = require('../championlookup.js')
 const { getFeedback } = require('../feedback.js')
 
+
 module.exports = {
     name: 'guess',
     async execute(message, args, input) {
@@ -38,7 +39,8 @@ module.exports = {
         message.delete();
         addGuess(channelId, guessChampion, {
             username: message.author.username,
-            nickname: message.member?.nickname
+            nickname: message.member?.nickname,
+            userId: message.author.id
         });
         
 
@@ -54,7 +56,7 @@ module.exports = {
             const finalGuesses = [...currentGame.guesses]
             const finalGuessers = [...currentGame.guessers]
             deleteFeedbackMessage(channelId);
-            endGame(channelId)
+            endGame(channelId,null,message.guild.id)
             const history = finalGuesses.map((guessChampion, index) => {
                 const guesser = finalGuessers?.[index];
                 const guesserName = guesser?.nickname || guesser?.username || 'Unknown';
@@ -77,7 +79,9 @@ module.exports = {
             setFeedbackMessage(channelId, sent);
         });
         if (guessChampion.name.toLowerCase() === currentGame.target.name.toLowerCase()) {
-            endGame(channelId)
+            const winner = {userId:message.author.id}
+            endGame(channelId,winner,message.guild.id)
+
             return message.channel.send(
                 `Congratulations ${message.author}! You guessed the champion **${guessChampion.name}** correctly!`
             );
