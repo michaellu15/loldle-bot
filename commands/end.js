@@ -9,7 +9,7 @@ module.exports = {
             return message.reply(`No active game to end!`)
         }
         const feedback = getFeedback(game.target,game.target);
-        endGame(message.channel.id);
+        endGame(message.channel.id,null,message.guild.id);
 
         message.channel.send(`The game has been ended by ${message.author}.\n\n` + `**Correct Answer: ${game.target.name}**\n${feedback.slice(1).join('\n')}`)
         message.delete();
