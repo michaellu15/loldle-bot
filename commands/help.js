@@ -7,6 +7,7 @@ module.exports = {
 \`?guess <champion name>\` – Make a guess.
 \`?end\` – End the current game and reveal the answer.
 \`?help\` – Show this help message.
+\`?leaderboard\` – Display the server leaderboard
         `;
 
         message.author.send(helpMessage);
