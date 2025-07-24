@@ -6,7 +6,7 @@ module.exports = {
         const guildId = message.guild.id
         const score = await getScore(guildId,userId)
         const leaderboard = await getLeaderboard(guildId)
-        if(!leaderboard){
+        if(!leaderboard || leaderboard.length===0){
             return message.channel.send(`This server doesn't have any leaderboard entries! Play a game to add some!`)
         }
         const leaderboardMessage = leaderboard.map((entry,i)=>
@@ -19,5 +19,6 @@ module.exports = {
             userMessage = `\n\n **${message.author}'s Position:** **#${placement}** - ${user.wins} wins, ${user.guesses} guesses`
         }
         message.channel.send(`**Leaderboard**\n\n${leaderboardMessage}${userMessage}`)
+        message.delete()
     }
 }

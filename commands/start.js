@@ -15,6 +15,6 @@ module.exports = {
         )
         //delete start command message sent by user
         message.delete()
-        console.log(chosenChampion.name);
+        console.log(`${message.guild.name}: ${chosenChampion.name}`);
     }
 }
