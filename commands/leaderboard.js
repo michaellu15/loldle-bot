@@ -16,9 +16,9 @@ module.exports = {
         const placement = leaderboard.findIndex((entry)=>entry.userId===userId)+1
         let userMessage = ``
         if(user && placement){
-            userMessage = `\n\n **${message.author}'s Position:** **#${placement}** - ${user.wins} wins, ${user.guesses} guesses`
+            userMessage = `\n\n **${message.author}'s Position:** **#${placement}** - ✅${user.wins} wins, ❓${user.guesses} guesses`
         }
-        message.channel.send(`**Leaderboard**\n\n${leaderboardMessage}${userMessage}`)
+        message.channel.send(`🏆**Leaderboard**🏆\n\n${leaderboardMessage}${userMessage}`)
         message.delete()
     }
 }
