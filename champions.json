@@ -3734,6 +3734,28 @@
     },
     {
         "id": [
+            "zaahen"
+        ],
+        "name": "Zaahen",
+        "resource": "Mana",
+        "gender": "Male",
+        "rangeType": [
+            "Melee"
+        ],
+        "releaseDate": 2025,
+        "regions": [
+            "Shurima"
+        ],
+        "positions": [
+            "Top",
+            "Jungle"
+        ],
+        "species": [
+            "Darkin"
+        ]
+    },
+    {
+        "id": [
             "zed"
         ],
         "name": "Zed",
